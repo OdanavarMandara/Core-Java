@@ -1,0 +1,18 @@
+class CricketTeam
+{
+	String name;
+    int noofmembers;
+	int score;
+	int wicket;
+	
+	CricketTeam(String cricketteamname, int ctnoofmembers,int ctscore,int ctwicket)
+	{
+	name=cricketteamname;
+    noofmembers=ctnoofmembers;
+	score=ctscore;
+	wicket= ctwicket;
+	}
+}
+	
+	
+	
