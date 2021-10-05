@@ -10,7 +10,7 @@ class IceCream
 	{
 		this.temp=temp;
 	}
-	Icream(float temp,String flavour,Color color)
+	IceCream(float temp,String flavour,Color color)
 	{
 		this(temp);
 		this.flavour=flavour;
