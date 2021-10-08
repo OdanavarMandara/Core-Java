@@ -1,0 +1,5 @@
+enum Foodtype 
+{
+	GOOD,BAD;
+
+}
