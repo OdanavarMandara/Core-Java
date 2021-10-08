@@ -7,6 +7,7 @@ class FoodItemStarter
 		fooditem1.printTotalPrice();
 		
 		FoodItem fooditem2=new FoodItem("kachori",200.0f,"bb",20,Foodtype.GOOD,4,OrderType.OFFLINE);
+		fooditem2.displayDetails();
 		fooditem2.printTotalPrice();
 		
 		FoodItem.printTotalFoodItemsPrice();
