@@ -4,10 +4,10 @@ public class LawyerDTO {
 	
 	private String name;
 	private String qualification;
-	private String experience;
+	private int experience;
 	private String gender;
 	private int age;
-	private String courtType;
+	private String countryType;
 	private int casesWon;
 	private int casesLost;
 	
@@ -15,15 +15,15 @@ public class LawyerDTO {
 	{
 	}
 
-	public LawyerDTO(String name, String qualification, String experience, String gender, int age, String courtType,
-			String casesWon, String casesLost) {
+	public LawyerDTO(String name, String qualification, int experience,String gender, int age, String courtType,
+			int casesWon, int casesLost) {
 		super();
 		this.name = name;
 		this.qualification = qualification;
 		this.experience = experience;
 		this.gender = gender;
 		this.age = age;
-		this.courtType = courtType;
+		this.countryType = countryType;
 		this.casesWon = casesWon;
 		this.casesLost = casesLost;
 	}
@@ -44,11 +44,11 @@ public class LawyerDTO {
 		this.qualification = qualification;
 	}
 
-	public String getExperience() {
+	public int getExperience() {
 		return experience;
 	}
 
-	public void setExperience(String experience) {
+	public void setExperience(int experience) {
 		this.experience = experience;
 	}
 
@@ -68,31 +68,33 @@ public class LawyerDTO {
 		this.age = age;
 	}
 
-	public String getCourtType() {
-		return courtType;
+	public String getCountryType() {
+		return countryType;
 	}
 
 	public void setCourtType(String courtType) {
-		this.courtType = courtType;
+		this.countryType = courtType;
 	}
 
-	public String getCasesWon() {
+	public int getCasesWon() {
 		return casesWon;
 	}
 
-	public void setCasesWon(String casesWon) {
+	public void setCasesWon(int casesWon) {
 		this.casesWon = casesWon;
 	}
 
-	public String getCasesLost() {
+	public int getCasesLost() {
 		return casesLost;
 	}
 
-	public void setCasesLost(String casesLost) {
+	public void setCasesLost(int casesLost) {
 		this.casesLost = casesLost;
 	}
 	
 	
 	}
+
+
 
 
