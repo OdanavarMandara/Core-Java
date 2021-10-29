@@ -6,7 +6,7 @@ import com.xworkz.dp.Dto.LawyerDTO;
 public class LawywerDAO {
 	
 	private LawyerDTO[] lawyerDTOs = new LawyerDTO[10];
-	private int counter = 0;
+	private static int counter = 0;
 	
 	public LawyerDTO[] getLawyerDTOs() {
 		return lawyerDTOs;
@@ -26,6 +26,19 @@ public class LawywerDAO {
 		}
 	}
 	
+	public void save(LawyerDTO dto, int index) {
+		if(index>=0 && index<lawyerDTOs.length && dto!=null) 
+		{
+			this.lawyerDTOs[index]=dto;
+			System.out.println("lawyerDTO at index:" .concat(String.valueOf(index)));
+		}
+		else {
+			System.err.println("inavalid index");
+		}
+	}
+	
+	
+	
 	public void delete(int index) 
 	{
 		if (index >= 0 && index < lawyerDTOs.length) 
@@ -40,16 +53,16 @@ public class LawywerDAO {
 		}
 	}
 	
-	public boolean searchIplByName(String name) {
+	public boolean searchByName(String name) {
 		System.out.println("invoked searchIplByName");
 		System.out.println("name passed".concat(name));
 		for (int index = 0; index  < this.lawyerDTOs.length; index ++) {
 			LawyerDTO ref = this.lawyerDTOs[index ];
 			if (ref != null) {
-				System.out.println("ref in index is not null".concat(String.valueOf(index)));
+				System.out.println("ref in index is not null".concat(String.valueOf(name)));
 				String name1 = ref.getName();
 				System.out.println("matching".concat(name));
-				if (name.equals(name)) {
+				if (name1.equals(name)) {
 					System.out.println("name found");
 					return true;
 				}
@@ -60,22 +73,75 @@ public class LawywerDAO {
 	
 	
 	
-	public boolean searchIplByCasesWon(int casesWon) {
-		System.out.println("invoked searchIplByCasesWon");
-		System.out.println("name passed".concat(casesWon));
-		for (int index = 0; index  < this.lawyerDTOs.length; index ++) {
-			LawyerDTO ref = this.lawyerDTOs[index ];
-			if (ref != null) {
-				System.out.println("ref in index is not null".concat(String.valueOf(index)));
-				String name1 = ref.getName();
-				System.out.println("matching".concat(name));
-				if (name.equals(name)) {
-					System.out.println("name found");
+	public boolean searchByCasesWon(int caseWon) {
+		for (int i = 0; i < this.lawyerDTOs.length; i++) {
+			LawyerDTO ref=this.lawyerDTOs[i];
+			if(ref!=null) {
+				int tempCaseWon=ref.getCasesWon();
+				System.out.println("caseWon:" .concat(String.valueOf(tempCaseWon )));
+				if(tempCaseWon==caseWon) {
+				System.out.println("caseWon found");	
 					return true;
 				}
 			}
+			
 		}
 		return false;
+		
+	}
+	
+	public String getQualificationByName(String name) {
+		for (int i = 0; i < this.lawyerDTOs.length; i++) {
+			LawyerDTO ref=this.lawyerDTOs[i];
+			if(ref!=null) {
+				String name1=ref.getName();
+				if(name1.equals(name)) {
+					System.out.println("name found");
+					return name;
+				}
+
+			}
+		}
+		return name;
+	}
+	
+	public String getExpByName(String name) {
+		for (int i = 0; i < this.lawyerDTOs.length; i++) {
+			LawyerDTO ref=this.lawyerDTOs[i];
+			if(ref!=null) {
+				String name1=ref.getName();
+				if(name1.equals(name)) {
+					System.out.println("experience:");
+					System.out.println("name found");
+					return name;
+				}
+
+			}
+		}
+		return null;
+	}
+	
+	public void display() {
+		for (int i = 0; i < this.lawyerDTOs.length; i++) {
+			LawyerDTO ref=lawyerDTOs[i];
+			if(ref!=null) {
+				System.out.println(i);
+				System.out.println(ref.getAge());
+				System.out.println(ref.getCasesWon());
+				
+				System.out.println(ref.getExperience());
+				System.out.println(ref.getGender());
+				System.out.println(ref.getName());
+			}
+			
+		}
 	}
 
+	
 }
+	
+
+
+
+
+
